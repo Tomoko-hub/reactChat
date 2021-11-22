@@ -80,11 +80,12 @@ export default function SignIn({setName}) {
               autoFocus
               onChange={(event) => setString(event.target.value)}            />
             <Button
-              type="submit"
+              type="button"
               fullWidth
               variant="contained"
               sx={{ mt: 3, mb: 2 }}
               disabled={disabled}
+              onClick={() => setName(string)}
             >
               Start CHAT
             </Button>
