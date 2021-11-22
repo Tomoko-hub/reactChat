@@ -1,9 +1,13 @@
+import React,{useState} from 'react';
 import './App.css';
 import SignIn from './SignIn';
 
 function App() {
+  const [name, setName] = useState('')
+  console.log({name})
+
   return (
-    <SignIn />
+    <SignIn setName={setName} />
   );
 }
 
