@@ -33,7 +33,7 @@ const theme = createTheme();
 export default function SignIn({setName}) {
   const [disabled, setDisabled] = useState(true)
   const [string, setString]= useState('')
-  console.log({string})
+  const [isComposed, setIsComposed] = useState(false)
 
   useEffect(()=>{
     const disabled = string === ''
@@ -75,10 +75,19 @@ export default function SignIn({setName}) {
               required
               fullWidth
               id="name"
-              label="your nickname"
+              label="Write your name"
               name="name"
               autoFocus
-              onChange={(event) => setString(event.target.value)}            />
+              onChange={(event) => setString(event.target.value)}
+              onKeyDown={(event)=>{
+                if (isComposed) return
+
+                if (event.key === 'Enter'){
+                  setName(event.target.value)
+                  event.preventDefault()
+                }
+              }}
+              />
             <Button
               type="button"
               fullWidth
@@ -86,6 +95,8 @@ export default function SignIn({setName}) {
               sx={{ mt: 3, mb: 2 }}
               disabled={disabled}
               onClick={() => setName(string)}
+              onCompositionStart={()=> setIsComposed(true)}
+              onCompositionEnd={()=> setIsComposed(false)}
             >
               Start CHAT
             </Button>
