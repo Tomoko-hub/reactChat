@@ -1,7 +1,29 @@
 import React from 'react';
+import { makeStyles } from '@mui/styles';
 
-function Main (){
-    return <div>Unko</div>
+import MessageList from './MessageList';
+import MessageInputField from './MessageInputField';
+
+const useStyles = makeStyles({
+    root:{
+        display:'grid',
+        height: '100vh',
+        gridTemplateRows:'1fr auto',
+        color:'coral'
+    },
+})
+
+const Main = ({name}) =>{
+
+    const classes = useStyles()
+
+    return (
+        <div className={classes.root}>
+            <p>This is Main component</p>
+            <MessageList />
+            <MessageInputField name={name} />
+        </div>
+    )
 }
 
 export default Main
