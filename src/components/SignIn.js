@@ -87,6 +87,8 @@ export default function SignIn({setName}) {
                   event.preventDefault()
                 }
               }}
+              onCompositionStart={()=> setIsComposed(true)}
+              onCompositionEnd={()=> setIsComposed(false)}
               />
             <Button
               type="button"
@@ -95,8 +97,6 @@ export default function SignIn({setName}) {
               sx={{ mt: 3, mb: 2 }}
               disabled={disabled}
               onClick={() => setName(string)}
-              onCompositionStart={()=> setIsComposed(true)}
-              onCompositionEnd={()=> setIsComposed(false)}
             >
               Start CHAT
             </Button>
