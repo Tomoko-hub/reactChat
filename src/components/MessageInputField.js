@@ -3,6 +3,8 @@ import { makeStyles } from '@mui/styles';
 import { Grid } from "@mui/material";
 import Avatar from '@mui/material/Avatar';
 
+import { gravatarPath } from "../gravatar"; 
+
 const useStyles = makeStyles({
     root:{
         gridRow:2,
@@ -11,14 +13,15 @@ const useStyles = makeStyles({
 })
 
 
-const MessageInputField = () => {
+const MessageInputField = ({name}) => {
     const classes = useStyles()
+    const avatarPath = gravatarPath(name)
 
     return (
         <div className={classes.root}>
             <Grid container>
                 <Grid item xs={1}>
-                    <Avatar>
+                    <Avatar src={avatarPath}>
                     </Avatar>
                 </Grid>
                 <Grid item xs={10}>Put message</Grid>
