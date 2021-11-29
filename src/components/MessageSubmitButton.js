@@ -5,7 +5,7 @@ import SendIcon from '@mui/icons-material/Send';
 import {pushMessage} from '../firebase';
 
 
-function MessageSubmitButton ({name, setText, text}){
+function MessageSubmitButton ({inputEl, name, setText, text}){
     return(
     <Button 
         variant="outlined" 
@@ -13,6 +13,7 @@ function MessageSubmitButton ({name, setText, text}){
         onClick={()=> {
             pushMessage({name, text})
             setText('')
+            inputEl.current.focus()
         }}
     >
         <SendIcon />

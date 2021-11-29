@@ -4,15 +4,16 @@ import { TextField } from '@mui/material';
 import {pushMessage}  from '../firebase'
 
 
-function MessageField({name,setText,text}){
+function MessageField({inputEl,name,setText,text}){
     const [isComposed, setIsComposed] = useState(false)
 
     return (
         <TextField
+            autoFocus
             id="standard-basic"
-            label="Write Message" 
             variant="standard" 
             fullWidth={true}
+            inputRef={inputEl}
             onChange={(event)=>{setText(event.target.value)}}
             onKeyDown={(event)=>{
                 if (isComposed) return
