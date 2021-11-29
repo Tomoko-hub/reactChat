@@ -75,7 +75,6 @@ export default function SignIn({setName}) {
               required
               fullWidth
               id="name"
-              label="Write your name"
               name="name"
               autoFocus
               onChange={(event) => setString(event.target.value)}
