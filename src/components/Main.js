@@ -19,7 +19,6 @@ const Main = ({name}) =>{
 
     return (
         <div className={classes.root}>
-            <p>This is Main component</p>
             <MessageList />
             <MessageInputField name={name} />
         </div>

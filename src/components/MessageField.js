@@ -5,6 +5,8 @@ import {pushMessage}  from '../firebase'
 
 
 function MessageField({inputEl,name,setText,text}){
+
+    //This isComposed for japanese letters
     const [isComposed, setIsComposed] = useState(false)
 
     return (
@@ -15,6 +17,7 @@ function MessageField({inputEl,name,setText,text}){
             fullWidth={true}
             inputRef={inputEl}
             onChange={(event)=>{setText(event.target.value)}}
+            //This key down for Japanese letters
             onKeyDown={(event)=>{
                 if (isComposed) return
 
