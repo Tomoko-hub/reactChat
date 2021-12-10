@@ -7,17 +7,17 @@ import {pushMessage} from '../firebase';
 
 function MessageSubmitButton ({inputEl, name, setText, text}){
     return(
-    <Button 
-        variant="outlined" 
-        disabled={text === ''}
-        onClick={()=> {
-            pushMessage({name, text})
-            setText('')
-            inputEl.current.focus()
-        }}
-    >
-        <SendIcon />
-    </Button>
+        <Button 
+            variant="outlined" 
+            disabled={text === ''}
+            onClick={()=> {
+                pushMessage({name, text})
+                setText('')
+                inputEl.current.focus()
+            }}
+        >
+            <SendIcon />
+        </Button>
     )
 }
 

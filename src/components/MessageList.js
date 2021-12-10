@@ -21,11 +21,11 @@ const MessageList =()=>{
     useEffect(()=>{
         messagesRef
             .orderByKey()
-            .limitToLast(5)
+            .limitToLast(20)
             .on('value', (snapshot) => {
                 const messages = snapshot.val()
-                console.log(messages)
-                if  (messages===null) return
+                if  (messages===null) 
+                    return
 
                 const entries = Object.entries(messages)
                 const newMessages = entries.map((entry) =>{

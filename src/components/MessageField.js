@@ -17,7 +17,7 @@ function MessageField({inputEl,name,setText,text}){
             fullWidth={true}
             inputRef={inputEl}
             onChange={(event)=>{setText(event.target.value)}}
-            //This key down for Japanese letters
+            //This keydown for Japanese letters
             onKeyDown={(event)=>{
                 if (isComposed) return
 

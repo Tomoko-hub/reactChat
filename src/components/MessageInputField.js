@@ -6,6 +6,7 @@ import Avatar from '@mui/material/Avatar';
 import { gravatarPath } from "../gravatar";
 import MessageField from './MessageField'
 import MessageSubmitButton from "./MessageSubmitButton";
+import MessageDeleteButton from "./MessageDeleteButton";
 
 const useStyles = makeStyles({
     root:{
@@ -13,7 +14,6 @@ const useStyles = makeStyles({
         margin:'26px',
     },
 })
-
 
 const MessageInputField = ({name}) => {
     const inputEl = useRef(null)
@@ -36,9 +36,14 @@ const MessageInputField = ({name}) => {
                         text={text} />
                 </Grid>
                 <Grid item xs={1}>
+                    <MessageDeleteButton 
+                        inputEl={inputEl}
+                        setText={setText} text={text}
+                     />
                     <MessageSubmitButton 
                         inputEl={inputEl}
-                        name={name} setText={setText} text={text} />
+                        name={name} setText={setText} text={text}
+                     />
                 </Grid>
             </Grid>
         </div>
